@@ -7,6 +7,7 @@ namespace Greed
 {
     public static class Utilities
     {
+        static Random _rnd = new Random();
         /// <summary>
         /// returns a new random int in range
         /// </summary>
@@ -14,7 +15,7 @@ namespace Greed
         /// <param name="max">to max (exclusive)</param>
         public static int NewRandom(int min, int max)
         {
-            throw new System.NotImplementedException();
+            return _rnd.Next(min, max);
         }
     }
 }

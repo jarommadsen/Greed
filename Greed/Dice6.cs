@@ -7,12 +7,70 @@ namespace Greed
 {
     public class Dice6 : IDice
     {
+        int _face;
+        int _minValue = 1;
+        int _maxValue = 6;
+
         /// <summary>
         /// Makes a new 6-sided die, with a random face value
         /// </summary>
         public Dice6()
         {
-            throw new System.NotImplementedException();
+            _face = Roll();
+        }
+
+
+        /// <summary>
+        /// gets or sets the face value of the die
+        /// </summary>
+        public int Face
+        {
+            get
+            {
+                return _face;
+            }
+            set
+            {
+                _face = value;
+            }
+        }
+
+        /// <summary>
+        /// gets the Minimum possible value of the die
+        /// </summary>
+        public int MinValue {
+            get
+            {
+                return _minValue;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        /// <summary>
+        /// gets the Maximum possible value of the die
+        /// </summary>
+        public int MaxValue
+        {
+            get
+            {
+                return _maxValue;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        /// <summary>
+        /// Sets the die's value to a new random value in the range available to the die
+        /// </summary>
+        public int Roll()
+        {
+            int val = Utilities.NewRandom(_minValue,_maxValue);
+            return val;
         }
     }
 }
