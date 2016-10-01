@@ -3,16 +3,30 @@
   <Class Name="Greed.Dice6">
     <Position X="4.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAgAACAABAAAAAAAgAAAAAAgACAAgAA=</HashCode>
       <FileName>Dice6.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Greed.Utilities">
+    <Position X="1.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Utilities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Greed.Control">
+    <Position X="8.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIAAAAAAAAgGEAAAABAAAAAAABAgAAAAAAgCAAAAAAA=</HashCode>
+      <FileName>Control.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Greed.Player">
     <Position X="3" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
-      <FileName>Utilities.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAgAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="Greed.IDice">

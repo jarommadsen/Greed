@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Greed
 {
-    public partial class Form1 : Form
+    public partial class FrmPlay : Form
     {
-        public Form1()
+        public FrmPlay()
         {
             InitializeComponent();
         }
