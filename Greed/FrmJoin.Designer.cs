@@ -64,7 +64,6 @@
             this.TxtNameJoin.Name = "TxtNameJoin";
             this.TxtNameJoin.Size = new System.Drawing.Size(100, 26);
             this.TxtNameJoin.TabIndex = 2;
-            this.TxtNameJoin.Text = "Name";
             this.TxtNameJoin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // BtnJoin
@@ -76,14 +75,11 @@
             this.BtnJoin.TabIndex = 3;
             this.BtnJoin.Text = "Join";
             this.BtnJoin.UseVisualStyleBackColor = true;
+            this.BtnJoin.Click += new System.EventHandler(this.BtnJoin_Click);
             // 
             // LBxJoinedPlayerNames
             // 
             this.LBxJoinedPlayerNames.FormattingEnabled = true;
-            this.LBxJoinedPlayerNames.Items.AddRange(new object[] {
-            "abc",
-            "def",
-            "ghi"});
             this.LBxJoinedPlayerNames.Location = new System.Drawing.Point(85, 136);
             this.LBxJoinedPlayerNames.Name = "LBxJoinedPlayerNames";
             this.LBxJoinedPlayerNames.Size = new System.Drawing.Size(100, 56);
@@ -134,11 +130,11 @@
 
         private System.Windows.Forms.Label LblWelcome;
         private System.Windows.Forms.Label LblJoinInstructions;
-        private System.Windows.Forms.TextBox TxtNameJoin;
-        private System.Windows.Forms.Button BtnJoin;
-        private System.Windows.Forms.ListBox LBxJoinedPlayerNames;
-        private System.Windows.Forms.Button BtnLeave;
-        private System.Windows.Forms.Button BtnStart;
+        public System.Windows.Forms.TextBox TxtNameJoin;
+        public System.Windows.Forms.Button BtnJoin;
+        public System.Windows.Forms.ListBox LBxJoinedPlayerNames;
+        public System.Windows.Forms.Button BtnLeave;
+        public System.Windows.Forms.Button BtnStart;
     }
 }
 
