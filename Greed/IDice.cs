@@ -14,11 +14,11 @@ namespace Greed
         /// <summary>
         /// gets the Minimum possible value of the die
         /// </summary>
-        int MinValue { get; set; }
+        int MinValue { get; }
         /// <summary>
         /// gets the Maximum possible value of the die
         /// </summary>
-        int MaxValue { get; set; }
+        int MaxValue { get; }
 
         /// <summary>
         /// Sets the die's value to a new random value in the range available to the die
