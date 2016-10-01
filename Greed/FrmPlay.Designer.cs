@@ -41,7 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.TLPnlDiceAside = new System.Windows.Forms.TableLayoutPanel();
             this.BtnDie8 = new System.Windows.Forms.Button();
             this.BtnDie9 = new System.Windows.Forms.Button();
             this.BtnDie10 = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@
             this.BtnDie13 = new System.Windows.Forms.Button();
             this.BtnDie14 = new System.Windows.Forms.Button();
             this.TLPnlDiceInHand.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.TLPnlDiceAside.SuspendLayout();
             this.SuspendLayout();
             // 
             // TLPnlDiceInHand
@@ -197,29 +197,29 @@
             this.button2.Text = "ROLL";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel1
+            // TLPnlDiceAside
             // 
-            this.tableLayoutPanel1.ColumnCount = 7;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.Controls.Add(this.BtnDie9, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BtnDie10, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BtnDie11, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BtnDie12, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BtnDie13, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BtnDie14, 6, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BtnDie8, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 254);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(490, 70);
-            this.tableLayoutPanel1.TabIndex = 4;
+            this.TLPnlDiceAside.ColumnCount = 7;
+            this.TLPnlDiceAside.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.TLPnlDiceAside.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.TLPnlDiceAside.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.TLPnlDiceAside.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.TLPnlDiceAside.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.TLPnlDiceAside.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.TLPnlDiceAside.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.TLPnlDiceAside.Controls.Add(this.BtnDie9, 1, 0);
+            this.TLPnlDiceAside.Controls.Add(this.BtnDie10, 2, 0);
+            this.TLPnlDiceAside.Controls.Add(this.BtnDie11, 3, 0);
+            this.TLPnlDiceAside.Controls.Add(this.BtnDie12, 4, 0);
+            this.TLPnlDiceAside.Controls.Add(this.BtnDie13, 5, 0);
+            this.TLPnlDiceAside.Controls.Add(this.BtnDie14, 6, 0);
+            this.TLPnlDiceAside.Controls.Add(this.BtnDie8, 0, 0);
+            this.TLPnlDiceAside.Location = new System.Drawing.Point(16, 254);
+            this.TLPnlDiceAside.Name = "TLPnlDiceAside";
+            this.TLPnlDiceAside.RowCount = 1;
+            this.TLPnlDiceAside.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TLPnlDiceAside.Size = new System.Drawing.Size(490, 70);
+            this.TLPnlDiceAside.TabIndex = 4;
             // 
             // BtnDie8
             // 
@@ -296,7 +296,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 340);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.TLPnlDiceAside);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -306,7 +306,7 @@
             this.Name = "FrmPlay";
             this.Text = "Greed";
             this.TLPnlDiceInHand.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.TLPnlDiceAside.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,7 +327,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel TLPnlDiceAside;
         private System.Windows.Forms.Button BtnDie9;
         private System.Windows.Forms.Button BtnDie10;
         private System.Windows.Forms.Button BtnDie11;
