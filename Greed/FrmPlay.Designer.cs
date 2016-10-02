@@ -49,6 +49,7 @@
             this.BtnDie12 = new System.Windows.Forms.Button();
             this.BtnDie13 = new System.Windows.Forms.Button();
             this.BtnDie14 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.TLPnlDiceInHand.SuspendLayout();
             this.TLPnlDiceAside.SuspendLayout();
             this.SuspendLayout();
@@ -291,11 +292,24 @@
             this.BtnDie14.Text = "X";
             this.BtnDie14.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Enabled = false;
+            this.label2.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(212, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 15);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "LAST TURN!!";
+            // 
             // FrmPlay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 340);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.TLPnlDiceAside);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -335,5 +349,6 @@
         private System.Windows.Forms.Button BtnDie13;
         private System.Windows.Forms.Button BtnDie14;
         private System.Windows.Forms.Button BtnDie8;
+        private System.Windows.Forms.Label label2;
     }
 }

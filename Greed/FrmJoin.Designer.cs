@@ -68,6 +68,7 @@
             // 
             // BtnJoin
             // 
+            this.BtnJoin.Enabled = false;
             this.BtnJoin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnJoin.Location = new System.Drawing.Point(202, 104);
             this.BtnJoin.Name = "BtnJoin";

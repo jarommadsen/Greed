@@ -61,6 +61,17 @@ namespace Greed
         }
 
         /// <summary>
+        /// Player whose turn it is
+        /// </summary>
+        public static Player CurrentPlayer
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+        }
+
+        /// <summary>
         /// takes a die out of hand and sets it aside
         /// </summary>
         /// <param name="die">die to set aside</param>
@@ -142,6 +153,46 @@ namespace Greed
         /// moves all dice to in-hand
         /// </summary>
         public static void TakeAllDiceInHand()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// called when the roll button is clicked.  Rolls the dice in hand. If there are no possible points after rolling the dice then show a dialog explaining that the player busted.
+        /// </summary>
+        public static void RollEventHandler()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// called when a die is clicked.  If it is part of a set that has a point value, then all those dice are added to the DiceSetAside and the turn score is updated
+        /// </summary>
+        public static void DiceClickEventHandler()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// updates the form to display all the appropriate information
+        /// </summary>
+        public static void UpdateView()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// called when the Bank button is clicked.  Collects points from the dice that are left and adds the total turn points to the banked points value.
+        /// </summary>
+        public static void BankEventHandler()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// Sets the current player to the next one, with all seven dice
+        /// </summary>
+        public static void NextPlayer()
         {
             throw new System.NotImplementedException();
         }
