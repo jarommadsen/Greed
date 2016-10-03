@@ -21,7 +21,7 @@ namespace Greed
 
 
         /// <summary>
-        /// gets or sets the face value of the die
+        /// gets and sets the face value of the die
         /// </summary>
         public int Face
         {
@@ -43,10 +43,6 @@ namespace Greed
             {
                 return _minValue;
             }
-            set
-            {
-                throw new NotImplementedException();
-            }
         }
 
         /// <summary>
@@ -57,10 +53,6 @@ namespace Greed
             get
             {
                 return _maxValue;
-            }
-            set
-            {
-                throw new NotImplementedException();
             }
         }
 
