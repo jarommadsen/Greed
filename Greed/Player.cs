@@ -7,10 +7,15 @@ namespace Greed
 {
     public class Player
     {
+        string _name;
+        int _score;
+        int _turnScore;
         /// <param name="name">name of the player as it will be displayed</param>
         public Player(string name)
         {
-            throw new System.NotImplementedException();
+            _name = name;
+            _score = 0;
+            _turnScore = 0;
         }
 
         /// <summary>
@@ -20,7 +25,7 @@ namespace Greed
         {
             get
             {
-                throw new System.NotImplementedException();
+                return _name;
             }
             
         }
@@ -32,23 +37,19 @@ namespace Greed
         {
             get
             {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
+                return _score;
             }
         }
 
+        /// <summary>
+        /// Just a means of storing and retrieving a score that represents the temporary
+        /// turn point value that has not yet been banked.
+        /// </summary>
         public int TurnScore
         {
             get
             {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
+                return _turnScore;
             }
         }
     }
