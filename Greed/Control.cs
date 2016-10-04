@@ -47,7 +47,7 @@ namespace Greed
         }
 
         /// <summary>
-        /// Players in game
+        /// gets a list of the players
         /// </summary>
         public static List<Player> Players
         {
@@ -63,7 +63,7 @@ namespace Greed
         }
 
         /// <summary>
-        /// Player whose turn it is
+        /// gets the player whose turn it currently is
         /// </summary>
         public static Player CurrentPlayer
         {
