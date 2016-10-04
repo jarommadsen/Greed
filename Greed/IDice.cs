@@ -21,7 +21,7 @@ namespace Greed
         int MaxValue { get; }
 
         /// <summary>
-        /// Sets the Face to a new random value between MinValue and MaxValue
+        /// Sets the Face to a new random value between MinValue and MaxValue, returns that value (the new Face)
         /// </summary>
         int Roll();
     }
