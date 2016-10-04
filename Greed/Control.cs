@@ -24,10 +24,6 @@ namespace Greed
             {
                 throw new System.NotImplementedException();
             }
-
-            private set
-            {
-            }
         }
 
         /// <summary>
@@ -39,10 +35,7 @@ namespace Greed
             {
                 throw new System.NotImplementedException();
             }
-
-            private set
-            {
-            }
+            
         }
 
         /// <summary>
