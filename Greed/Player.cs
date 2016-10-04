@@ -42,9 +42,7 @@ namespace Greed
         }
 
         /// <summary>
-        /// Just a means of storing and retrieving a score that represents the temporary
-        /// points earned this turn.  This score is increased by rolling dice, is lost by busting,
-        /// and is added to the banked score if the player stops rolling.
+        /// gets, sets the points earned just this round.  May all be lost if the player busts.  Will be added to the Banked score if the player banks before busting.
         /// </summary>
         public int TurnScore
         {
