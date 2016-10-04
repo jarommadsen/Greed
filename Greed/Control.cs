@@ -230,11 +230,7 @@ namespace Greed
         public static void Reset()
         {
             _playerList.Clear();
-            foreach(IDice element in _diceAside)
-            {
-                _diceAside.Remove(element);
-                _diceHand.Add(element);
-            }
+            TakeAllDiceInHand();
         }
 
         /// <summary>
@@ -242,10 +238,10 @@ namespace Greed
         /// </summary>
         public static void TakeAllDiceInHand()
         {
-            foreach (IDice element in _diceHand)
+            foreach (IDice element in _diceAside)
             {
-                _diceHand.Remove(element);
-                _diceAside.Add(element);
+                _diceAside.Remove(element);
+                _diceHand.Add(element);
             }
         }
 
@@ -270,7 +266,10 @@ namespace Greed
         /// </summary>
         public static void UpdateView()
         {
-            throw new System.NotImplementedException();
+            foreach(IDice element in DiceInHand)
+            {
+
+            }
         }
 
         /// <summary>
@@ -286,7 +285,14 @@ namespace Greed
         /// </summary>
         public static void NextPlayer()
         {
-            throw new System.NotImplementedException();
+            if (_currentPlayer == null)
+            {
+                _currentPlayer = Players[0];
+            } else {
+                int i = Players.IndexOf(_currentPlayer) + 1;
+                if (i >= Players.Count()) i = 0;
+                _currentPlayer = Players[i];
+            }
         }
     }
 }

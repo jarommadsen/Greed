@@ -65,6 +65,8 @@
             this.TxtNameJoin.Size = new System.Drawing.Size(100, 26);
             this.TxtNameJoin.TabIndex = 2;
             this.TxtNameJoin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtNameJoin.Click += new System.EventHandler(this.TxtNameJoin_Click);
+            this.TxtNameJoin.TextChanged += new System.EventHandler(this.TxtNameJoin_TextChanged);
             // 
             // BtnJoin
             // 
@@ -85,6 +87,8 @@
             this.LBxJoinedPlayerNames.Name = "LBxJoinedPlayerNames";
             this.LBxJoinedPlayerNames.Size = new System.Drawing.Size(100, 56);
             this.LBxJoinedPlayerNames.TabIndex = 4;
+            this.LBxJoinedPlayerNames.SelectedIndexChanged += new System.EventHandler(this.LBxJoinedPlayerNames_SelectedIndexChanged);
+            this.LBxJoinedPlayerNames.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LBxJoinedPlayerNames_KeyDown);
             // 
             // BtnLeave
             // 
@@ -96,6 +100,7 @@
             this.BtnLeave.TabIndex = 3;
             this.BtnLeave.Text = "Leave";
             this.BtnLeave.UseVisualStyleBackColor = true;
+            this.BtnLeave.Click += new System.EventHandler(this.BtnLeave_Click);
             // 
             // BtnStart
             // 
@@ -107,9 +112,11 @@
             this.BtnStart.TabIndex = 3;
             this.BtnStart.Text = "Start";
             this.BtnStart.UseVisualStyleBackColor = true;
+            this.BtnStart.Click += new System.EventHandler(this.BtnStart_Click);
             // 
             // FrmJoin
             // 
+            this.AcceptButton = this.BtnJoin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 254);

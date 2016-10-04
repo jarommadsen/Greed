@@ -109,5 +109,19 @@ namespace Greed.Tests
 
             Assert.IsTrue(Control.DiceAreAllPoints(group));
         }
+
+        [TestMethod()]
+        public void NextPlayerTest()
+        {
+            Control.AddPlayer(new Player("Jarom"));
+            Control.AddPlayer(new Player("Denver"));
+            Control.NextPlayer();
+            Assert.IsTrue(Control.CurrentPlayer.Name == "Jarom");
+            Control.NextPlayer();
+            Assert.IsTrue(Control.CurrentPlayer.Name == "Denver");
+            Control.NextPlayer();
+            Assert.IsTrue(Control.CurrentPlayer.Name == "Jarom");
+
+        }
     }
 }

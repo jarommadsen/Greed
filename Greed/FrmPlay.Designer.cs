@@ -33,22 +33,22 @@
             this.BtnDie2 = new System.Windows.Forms.Button();
             this.BtnDie3 = new System.Windows.Forms.Button();
             this.BtnDie4 = new System.Windows.Forms.Button();
-            this.BtnDie5 = new System.Windows.Forms.Button();
             this.BtnDie6 = new System.Windows.Forms.Button();
             this.BtnDie7 = new System.Windows.Forms.Button();
+            this.BtnDie5 = new System.Windows.Forms.Button();
             this.TxtTurnPoints = new System.Windows.Forms.TextBox();
             this.TxtBankedPoints = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.TLPnlDiceAside = new System.Windows.Forms.TableLayoutPanel();
-            this.BtnDie8 = new System.Windows.Forms.Button();
             this.BtnDie9 = new System.Windows.Forms.Button();
             this.BtnDie10 = new System.Windows.Forms.Button();
             this.BtnDie11 = new System.Windows.Forms.Button();
             this.BtnDie12 = new System.Windows.Forms.Button();
             this.BtnDie13 = new System.Windows.Forms.Button();
             this.BtnDie14 = new System.Windows.Forms.Button();
+            this.BtnDie8 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.TLPnlDiceInHand.SuspendLayout();
             this.TLPnlDiceAside.SuspendLayout();
@@ -118,16 +118,6 @@
             this.BtnDie4.Text = "X";
             this.BtnDie4.UseVisualStyleBackColor = true;
             // 
-            // BtnDie5
-            // 
-            this.BtnDie5.Font = new System.Drawing.Font("Arial Black", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDie5.Location = new System.Drawing.Point(279, 3);
-            this.BtnDie5.Name = "BtnDie5";
-            this.BtnDie5.Size = new System.Drawing.Size(63, 64);
-            this.BtnDie5.TabIndex = 0;
-            this.BtnDie5.Text = "X";
-            this.BtnDie5.UseVisualStyleBackColor = true;
-            // 
             // BtnDie6
             // 
             this.BtnDie6.Font = new System.Drawing.Font("Arial Black", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -147,6 +137,16 @@
             this.BtnDie7.TabIndex = 0;
             this.BtnDie7.Text = "X";
             this.BtnDie7.UseVisualStyleBackColor = true;
+            // 
+            // BtnDie5
+            // 
+            this.BtnDie5.Font = new System.Drawing.Font("Arial Black", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDie5.Location = new System.Drawing.Point(279, 3);
+            this.BtnDie5.Name = "BtnDie5";
+            this.BtnDie5.Size = new System.Drawing.Size(63, 64);
+            this.BtnDie5.TabIndex = 0;
+            this.BtnDie5.Text = "X";
+            this.BtnDie5.UseVisualStyleBackColor = true;
             // 
             // TxtTurnPoints
             // 
@@ -222,16 +222,6 @@
             this.TLPnlDiceAside.Size = new System.Drawing.Size(490, 70);
             this.TLPnlDiceAside.TabIndex = 4;
             // 
-            // BtnDie8
-            // 
-            this.BtnDie8.Font = new System.Drawing.Font("Arial Black", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDie8.Location = new System.Drawing.Point(3, 3);
-            this.BtnDie8.Name = "BtnDie8";
-            this.BtnDie8.Size = new System.Drawing.Size(63, 64);
-            this.BtnDie8.TabIndex = 0;
-            this.BtnDie8.Text = "X";
-            this.BtnDie8.UseVisualStyleBackColor = true;
-            // 
             // BtnDie9
             // 
             this.BtnDie9.Font = new System.Drawing.Font("Arial Black", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -291,6 +281,16 @@
             this.BtnDie14.TabIndex = 0;
             this.BtnDie14.Text = "X";
             this.BtnDie14.UseVisualStyleBackColor = true;
+            // 
+            // BtnDie8
+            // 
+            this.BtnDie8.Font = new System.Drawing.Font("Arial Black", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDie8.Location = new System.Drawing.Point(3, 3);
+            this.BtnDie8.Name = "BtnDie8";
+            this.BtnDie8.Size = new System.Drawing.Size(63, 64);
+            this.BtnDie8.TabIndex = 0;
+            this.BtnDie8.Text = "X";
+            this.BtnDie8.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
