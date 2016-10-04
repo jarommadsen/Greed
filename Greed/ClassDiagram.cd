@@ -18,14 +18,14 @@
   <Class Name="Greed.Control">
     <Position X="8.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EIAAAAAAAAgGEAAAABAAAAAAABAgAAAAAAgCAAAAAAA=</HashCode>
+      <HashCode>EIBAAQAAAQoGFAAAABAEEAAAANAiAAAAAAgCoAAAAAA=</HashCode>
       <FileName>Control.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Greed.Player">
     <Position X="3" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAgAAAAAAAAAAAAAAQA=</HashCode>
+      <HashCode>AAAAIAAAAEAAAgAAAAAAAAQAAAgAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
   </Class>

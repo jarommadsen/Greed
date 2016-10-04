@@ -19,7 +19,7 @@ namespace Greed
         }
 
         /// <summary>
-        /// returns the name of the player
+        /// gets the name of the player
         /// </summary>
         public string Name
         {
@@ -27,11 +27,11 @@ namespace Greed
             {
                 return _name;
             }
-            
+
         }
 
         /// <summary>
-        /// point total banked for this player
+        /// gets, sets the points banked by this player
         /// </summary>
         public int BankedScore
         {
