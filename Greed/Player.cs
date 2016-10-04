@@ -39,6 +39,10 @@ namespace Greed
             {
                 return _score;
             }
+            set
+            {
+                _score = value;
+            }
         }
 
         /// <summary>
@@ -51,6 +55,10 @@ namespace Greed
             get
             {
                 return _turnScore;
+            }
+            set
+            {
+                _turnScore = value;
             }
         }
     }

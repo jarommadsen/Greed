@@ -39,17 +39,18 @@
             this.TxtTurnPoints = new System.Windows.Forms.TextBox();
             this.TxtBankedPoints = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtnBank = new System.Windows.Forms.Button();
+            this.BtnRoll = new System.Windows.Forms.Button();
             this.TLPnlDiceAside = new System.Windows.Forms.TableLayoutPanel();
             this.BtnDie9 = new System.Windows.Forms.Button();
             this.BtnDie10 = new System.Windows.Forms.Button();
             this.BtnDie11 = new System.Windows.Forms.Button();
-            this.BtnDie12 = new System.Windows.Forms.Button();
             this.BtnDie13 = new System.Windows.Forms.Button();
             this.BtnDie14 = new System.Windows.Forms.Button();
             this.BtnDie8 = new System.Windows.Forms.Button();
+            this.BtnDie12 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.TxtCurrentPlayer = new System.Windows.Forms.Label();
             this.TLPnlDiceInHand.SuspendLayout();
             this.TLPnlDiceAside.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +88,7 @@
             this.BtnDie1.TabIndex = 0;
             this.BtnDie1.Text = "X";
             this.BtnDie1.UseVisualStyleBackColor = true;
+            this.BtnDie1.Click += new System.EventHandler(this.HandBtnDie_Click);
             // 
             // BtnDie2
             // 
@@ -97,6 +99,7 @@
             this.BtnDie2.TabIndex = 0;
             this.BtnDie2.Text = "X";
             this.BtnDie2.UseVisualStyleBackColor = true;
+            this.BtnDie2.Click += new System.EventHandler(this.HandBtnDie_Click);
             // 
             // BtnDie3
             // 
@@ -107,6 +110,7 @@
             this.BtnDie3.TabIndex = 0;
             this.BtnDie3.Text = "X";
             this.BtnDie3.UseVisualStyleBackColor = true;
+            this.BtnDie3.Click += new System.EventHandler(this.HandBtnDie_Click);
             // 
             // BtnDie4
             // 
@@ -117,6 +121,7 @@
             this.BtnDie4.TabIndex = 0;
             this.BtnDie4.Text = "X";
             this.BtnDie4.UseVisualStyleBackColor = true;
+            this.BtnDie4.Click += new System.EventHandler(this.HandBtnDie_Click);
             // 
             // BtnDie6
             // 
@@ -127,6 +132,7 @@
             this.BtnDie6.TabIndex = 0;
             this.BtnDie6.Text = "X";
             this.BtnDie6.UseVisualStyleBackColor = true;
+            this.BtnDie6.Click += new System.EventHandler(this.HandBtnDie_Click);
             // 
             // BtnDie7
             // 
@@ -137,6 +143,7 @@
             this.BtnDie7.TabIndex = 0;
             this.BtnDie7.Text = "X";
             this.BtnDie7.UseVisualStyleBackColor = true;
+            this.BtnDie7.Click += new System.EventHandler(this.HandBtnDie_Click);
             // 
             // BtnDie5
             // 
@@ -147,6 +154,7 @@
             this.BtnDie5.TabIndex = 0;
             this.BtnDie5.Text = "X";
             this.BtnDie5.UseVisualStyleBackColor = true;
+            this.BtnDie5.Click += new System.EventHandler(this.HandBtnDie_Click);
             // 
             // TxtTurnPoints
             // 
@@ -179,24 +187,26 @@
             this.label1.TabIndex = 2;
             this.label1.Text = ">>";
             // 
-            // button1
+            // BtnBank
             // 
-            this.button1.Location = new System.Drawing.Point(295, 209);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(211, 39);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "BANK (End Turn)";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnBank.Location = new System.Drawing.Point(295, 209);
+            this.BtnBank.Name = "BtnBank";
+            this.BtnBank.Size = new System.Drawing.Size(211, 39);
+            this.BtnBank.TabIndex = 3;
+            this.BtnBank.Text = "BANK (End Turn)";
+            this.BtnBank.UseVisualStyleBackColor = true;
+            this.BtnBank.Click += new System.EventHandler(this.BtnBank_Click);
             // 
-            // button2
+            // BtnRoll
             // 
-            this.button2.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(34, 164);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(240, 84);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "ROLL";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnRoll.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRoll.Location = new System.Drawing.Point(34, 164);
+            this.BtnRoll.Name = "BtnRoll";
+            this.BtnRoll.Size = new System.Drawing.Size(240, 84);
+            this.BtnRoll.TabIndex = 3;
+            this.BtnRoll.Text = "ROLL";
+            this.BtnRoll.UseVisualStyleBackColor = true;
+            this.BtnRoll.Click += new System.EventHandler(this.BtnRoll_Click);
             // 
             // TLPnlDiceAside
             // 
@@ -211,10 +221,10 @@
             this.TLPnlDiceAside.Controls.Add(this.BtnDie9, 1, 0);
             this.TLPnlDiceAside.Controls.Add(this.BtnDie10, 2, 0);
             this.TLPnlDiceAside.Controls.Add(this.BtnDie11, 3, 0);
-            this.TLPnlDiceAside.Controls.Add(this.BtnDie12, 4, 0);
             this.TLPnlDiceAside.Controls.Add(this.BtnDie13, 5, 0);
             this.TLPnlDiceAside.Controls.Add(this.BtnDie14, 6, 0);
             this.TLPnlDiceAside.Controls.Add(this.BtnDie8, 0, 0);
+            this.TLPnlDiceAside.Controls.Add(this.BtnDie12, 4, 0);
             this.TLPnlDiceAside.Location = new System.Drawing.Point(16, 254);
             this.TLPnlDiceAside.Name = "TLPnlDiceAside";
             this.TLPnlDiceAside.RowCount = 1;
@@ -231,6 +241,7 @@
             this.BtnDie9.TabIndex = 0;
             this.BtnDie9.Text = "X";
             this.BtnDie9.UseVisualStyleBackColor = true;
+            this.BtnDie9.Click += new System.EventHandler(this.AsideBtnDie_Click);
             // 
             // BtnDie10
             // 
@@ -241,6 +252,7 @@
             this.BtnDie10.TabIndex = 0;
             this.BtnDie10.Text = "X";
             this.BtnDie10.UseVisualStyleBackColor = true;
+            this.BtnDie10.Click += new System.EventHandler(this.AsideBtnDie_Click);
             // 
             // BtnDie11
             // 
@@ -251,16 +263,7 @@
             this.BtnDie11.TabIndex = 0;
             this.BtnDie11.Text = "X";
             this.BtnDie11.UseVisualStyleBackColor = true;
-            // 
-            // BtnDie12
-            // 
-            this.BtnDie12.Font = new System.Drawing.Font("Arial Black", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDie12.Location = new System.Drawing.Point(279, 3);
-            this.BtnDie12.Name = "BtnDie12";
-            this.BtnDie12.Size = new System.Drawing.Size(63, 64);
-            this.BtnDie12.TabIndex = 0;
-            this.BtnDie12.Text = "X";
-            this.BtnDie12.UseVisualStyleBackColor = true;
+            this.BtnDie11.Click += new System.EventHandler(this.AsideBtnDie_Click);
             // 
             // BtnDie13
             // 
@@ -271,6 +274,7 @@
             this.BtnDie13.TabIndex = 0;
             this.BtnDie13.Text = "X";
             this.BtnDie13.UseVisualStyleBackColor = true;
+            this.BtnDie13.Click += new System.EventHandler(this.AsideBtnDie_Click);
             // 
             // BtnDie14
             // 
@@ -281,6 +285,7 @@
             this.BtnDie14.TabIndex = 0;
             this.BtnDie14.Text = "X";
             this.BtnDie14.UseVisualStyleBackColor = true;
+            this.BtnDie14.Click += new System.EventHandler(this.AsideBtnDie_Click);
             // 
             // BtnDie8
             // 
@@ -291,6 +296,18 @@
             this.BtnDie8.TabIndex = 0;
             this.BtnDie8.Text = "X";
             this.BtnDie8.UseVisualStyleBackColor = true;
+            this.BtnDie8.Click += new System.EventHandler(this.AsideBtnDie_Click);
+            // 
+            // BtnDie12
+            // 
+            this.BtnDie12.Font = new System.Drawing.Font("Arial Black", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDie12.Location = new System.Drawing.Point(279, 3);
+            this.BtnDie12.Name = "BtnDie12";
+            this.BtnDie12.Size = new System.Drawing.Size(63, 64);
+            this.BtnDie12.TabIndex = 0;
+            this.BtnDie12.Text = "X";
+            this.BtnDie12.UseVisualStyleBackColor = true;
+            this.BtnDie12.Click += new System.EventHandler(this.AsideBtnDie_Click);
             // 
             // label2
             // 
@@ -304,21 +321,32 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "LAST TURN!!";
             // 
+            // TxtCurrentPlayer
+            // 
+            this.TxtCurrentPlayer.AutoSize = true;
+            this.TxtCurrentPlayer.Location = new System.Drawing.Point(246, 29);
+            this.TxtCurrentPlayer.Name = "TxtCurrentPlayer";
+            this.TxtCurrentPlayer.Size = new System.Drawing.Size(73, 13);
+            this.TxtCurrentPlayer.TabIndex = 6;
+            this.TxtCurrentPlayer.Text = "Current Player";
+            // 
             // FrmPlay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 340);
+            this.Controls.Add(this.TxtCurrentPlayer);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TLPnlDiceAside);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnRoll);
+            this.Controls.Add(this.BtnBank);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtBankedPoints);
             this.Controls.Add(this.TxtTurnPoints);
             this.Controls.Add(this.TLPnlDiceInHand);
             this.Name = "FrmPlay";
             this.Text = "Greed";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmPlay_FormClosed);
             this.TLPnlDiceInHand.ResumeLayout(false);
             this.TLPnlDiceAside.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -339,8 +367,8 @@
         private System.Windows.Forms.TextBox TxtTurnPoints;
         private System.Windows.Forms.TextBox TxtBankedPoints;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnBank;
+        private System.Windows.Forms.Button BtnRoll;
         private System.Windows.Forms.TableLayoutPanel TLPnlDiceAside;
         private System.Windows.Forms.Button BtnDie9;
         private System.Windows.Forms.Button BtnDie10;
@@ -350,5 +378,6 @@
         private System.Windows.Forms.Button BtnDie14;
         private System.Windows.Forms.Button BtnDie8;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label TxtCurrentPlayer;
     }
 }

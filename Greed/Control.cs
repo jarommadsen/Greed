@@ -191,6 +191,9 @@ namespace Greed
                         if (i != 0 && i != 4)
                         {
                             val = 0;
+                        }else
+                        {
+                            val *= numbers[i];
                         }
                     }
                     total += val;
@@ -240,9 +243,9 @@ namespace Greed
         {
             foreach (IDice element in _diceAside)
             {
-                _diceAside.Remove(element);
                 _diceHand.Add(element);
             }
+            _diceAside.Clear();
         }
 
         /// <summary>
@@ -261,16 +264,6 @@ namespace Greed
             throw new System.NotImplementedException();
         }
 
-        /// <summary>
-        /// updates the form to display all the appropriate information
-        /// </summary>
-        public static void UpdateView()
-        {
-            foreach(IDice element in DiceInHand)
-            {
-
-            }
-        }
 
         /// <summary>
         /// called when the Bank button is clicked.  Collects points from the dice that are left and adds the total turn points to the banked points value.
@@ -293,6 +286,7 @@ namespace Greed
                 if (i >= Players.Count()) i = 0;
                 _currentPlayer = Players[i];
             }
+            TakeAllDiceInHand();
         }
     }
 }
