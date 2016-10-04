@@ -142,7 +142,11 @@ namespace Greed
         /// <param name="diceList">group of dice to check</param>
         public static bool DiceAreAllPoints(List<IDice> diceList)
         {
-            throw new System.NotImplementedException();
+            foreach(IDice element in diceList)
+            {
+                if (!DieHasWorth((Dice6)element, diceList)) return false;
+            }
+            return true;
         }
 
         /// <summary>
@@ -225,7 +229,12 @@ namespace Greed
         /// </summary>
         public static void Reset()
         {
-            throw new System.NotImplementedException();
+            _playerList.Clear();
+            foreach(IDice element in _diceAside)
+            {
+                _diceAside.Remove(element);
+                _diceHand.Add(element);
+            }
         }
 
         /// <summary>
@@ -233,7 +242,11 @@ namespace Greed
         /// </summary>
         public static void TakeAllDiceInHand()
         {
-            throw new System.NotImplementedException();
+            foreach (IDice element in _diceHand)
+            {
+                _diceHand.Remove(element);
+                _diceAside.Add(element);
+            }
         }
 
         /// <summary>

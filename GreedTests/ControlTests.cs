@@ -56,7 +56,58 @@ namespace Greed.Tests
             list.Add(die);
 
             int total = Control.GetDicePoints(list);
-            Assert.IsTrue(total == 600,"Total was: "+total);
+            Assert.IsTrue(total == 600, "Total was: " + total);
+        }
+
+        [TestMethod()]
+        public void DieHasWorthTest()
+        {
+            Dice6 die;
+            List<IDice> group = new List<IDice>();
+            int[] array = new int[7] { 3, 3, 3, 1, 5, 2, 4 };
+
+            for (int i = 0; i < 7; i++)
+            {
+                die = new Dice6();
+                die.Face = array[i];
+                group.Add(die);
+            }
+
+            die = (Dice6)group[0];
+            Assert.IsTrue(Control.DieHasWorth(die, group));
+            die = (Dice6)group[5];
+            Assert.IsFalse(Control.DieHasWorth(die, group));
+            die = (Dice6)group[6];
+            Assert.IsFalse(Control.DieHasWorth(die, group));
+        }
+
+        [TestMethod()]
+        public void DiceAreAllPointsTest()
+        {
+            Dice6 die;
+            List<IDice> group = new List<IDice>();
+            int[] array = new int[7] { 3, 3, 3, 1, 5, 2, 4 };
+
+            for (int i = 0; i < 7; i++)
+            {
+                die = new Dice6();
+                die.Face = array[i];
+                group.Add(die);
+            }
+
+            Assert.IsFalse(Control.DiceAreAllPoints(group));
+
+            group.Clear();
+            array = new int[7] { 3, 3, 3, 1, 5, 5, 5 };
+
+            for (int i = 0; i < 7; i++)
+            {
+                die = new Dice6();
+                die.Face = array[i];
+                group.Add(die);
+            }
+
+            Assert.IsTrue(Control.DiceAreAllPoints(group));
         }
     }
 }

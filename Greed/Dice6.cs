@@ -62,6 +62,7 @@ namespace Greed
         public int Roll()
         {
             int val = Utilities.NewRandom(_minValue,_maxValue);
+            _face = val;
             return val;
         }
     }
