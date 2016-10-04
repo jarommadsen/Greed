@@ -16,7 +16,7 @@ namespace Greed
         }
 
         /// <summary>
-        /// Dice set aside
+        /// Gets the dice that have been set aside for points
         /// </summary>
         public static List<IDice> DiceSetAside
         {
@@ -31,7 +31,7 @@ namespace Greed
         }
 
         /// <summary>
-        /// Dice to roll
+        /// Gets the dice that are still rollable
         /// </summary>
         public static List<IDice> DiceInHand
         {
