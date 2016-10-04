@@ -21,7 +21,7 @@ namespace Greed
         int MaxValue { get; }
 
         /// <summary>
-        /// Sets the die's value to a new random value in the range available to the die
+        /// Sets the Face to a new random value between MinValue and MaxValue
         /// </summary>
         int Roll();
     }
