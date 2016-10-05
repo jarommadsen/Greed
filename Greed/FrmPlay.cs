@@ -13,7 +13,7 @@ namespace Greed
     public partial class FrmPlay : Form
     {
         private const string EMPTY_SLOT_TXT = "X";
-        private const int START_THRESHOLD = 1000;
+        private const int START_THRESHOLD = 100;
 
         Button[] _handBtns;
         Button[] _asideBtns;
@@ -30,7 +30,7 @@ namespace Greed
             InitializeComponent();
             _finalRound = false;
             _winner = null;
-            _winThreshold = 10000;
+            _winThreshold = 1000;
             _handBtns = new Button[7] { BtnDie1, BtnDie2, BtnDie3, BtnDie4, BtnDie5, BtnDie6, BtnDie7 };
             _asideBtns = new Button[7] { BtnDie8, BtnDie9, BtnDie10, BtnDie11, BtnDie12, BtnDie13, BtnDie14 };
             _allBtns = new Button[14];
@@ -101,6 +101,9 @@ namespace Greed
                 }
             }
             //Enable/Disable Roll and Bank buttons
+            BtnRoll.Enabled = false;
+            BtnBank.Enabled = false;
+            BtnBank.Text = "BANK(End Turn)";
             List<IDice> list = ModifiedSetAside();
             if (Control.DiceAreAllPoints(list))
             {
@@ -108,12 +111,19 @@ namespace Greed
                 {
                     BtnRoll.Enabled = true;
                 }
-                BtnBank.Enabled = true;
-            }
-            else
-            {
-                BtnRoll.Enabled = false;
-                BtnBank.Enabled = false;
+                int score = Control.CurrentPlayer.TurnScore + Control.CurrentPlayer.BankedScore + Control.GetDicePoints(list);
+                if ((!_finalRound && score >= START_THRESHOLD) || (_finalRound && score > _winThreshold) || _bust)
+                {
+                    BtnBank.Enabled = true;
+                    if (_bust)
+                    {
+                        BtnBank.Text = "BUST(End Turn)";
+                        if(_finalRound && score <= _winThreshold)
+                        {
+                            TxtThreshold.Text = "YOU'RE OUT!";
+                        }
+                    }
+                }
             }
 
             //Update Scores
@@ -184,17 +194,24 @@ namespace Greed
             BtnRoll.Enabled = true;
 
             //Update text
+            //Update current player name
             TxtCurrentPlayer.Text = Control.CurrentPlayer.Name;
-            TxtThreshold.ForeColor = Color.Black;
-            TxtThreshold.Text = "Score " + _winThreshold + " points to start Final Round";
-            if (Control.CurrentPlayer.BankedScore < START_THRESHOLD)
-            {
-                TxtThreshold.Text = "Score at least " + START_THRESHOLD + " points to get in the game";
-            }
-            if (_finalRound)
-            {
+
+            //Update help line
+            if (_finalRound) {
                 TxtThreshold.ForeColor = Color.Red;
                 TxtThreshold.Text = "LAST ROUND! Score to beat: " + _winThreshold;
+            } else {
+                if (Control.CurrentPlayer.BankedScore < START_THRESHOLD)
+                {
+                    TxtThreshold.ForeColor = Color.Blue;
+                    TxtThreshold.Text = "Score at least " + START_THRESHOLD + " points to get in the game";
+                }
+                else
+                {
+                    TxtThreshold.ForeColor = Color.Black;
+                    TxtThreshold.Text = "Score " + _winThreshold + " points to start Final Round";
+                }
             }
         }
 
@@ -256,18 +273,24 @@ namespace Greed
                 System.Diagnostics.Debug.WriteLine(Control.CurrentPlayer.Name + ": " + Control.CurrentPlayer.BankedScore);
             }
             //Trigger final round if score crosses win threshold
-            if(Control.CurrentPlayer.BankedScore >= _winThreshold)
+            if((!_finalRound && Control.CurrentPlayer.BankedScore >= _winThreshold)||Control.CurrentPlayer.BankedScore>_winThreshold)
             {
                 _finalRound = true;
                 _winner = Control.CurrentPlayer;
                 _winThreshold = Control.CurrentPlayer.BankedScore;
             }
             Control.CurrentPlayer.TurnScore = 0;
+            if (_finalRound && _bust)
+            {
+                Control.RemovePlayer(Control.CurrentPlayer);
+            }
             NextPlayer();
+
+            //Winner?
             if(_finalRound && Control.CurrentPlayer == _winner)
             {
                 Hide();
-                FrmGameOver frm = new FrmGameOver();
+                FrmGameOver frm = new FrmGameOver(_winner);
                 frm.Show();
             }
         }

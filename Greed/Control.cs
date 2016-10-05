@@ -246,6 +246,10 @@ namespace Greed
                 _diceHand.Add(element);
             }
             _diceAside.Clear();
+            foreach(IDice element in _diceHand)
+            {
+                element.Roll();
+            }
         }
 
         /// <summary>
