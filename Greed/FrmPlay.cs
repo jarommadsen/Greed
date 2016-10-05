@@ -118,9 +118,13 @@ namespace Greed
                     if (_bust)
                     {
                         BtnBank.Text = "BUST(End Turn)";
+                        TxtThreshold.ForeColor = Color.Red;
                         if(_finalRound && score <= _winThreshold)
                         {
                             TxtThreshold.Text = "YOU'RE OUT!";
+                        }else
+                        {
+                            TxtThreshold.Text = "BUST! No points gained this round.";
                         }
                     }
                 }
@@ -129,6 +133,24 @@ namespace Greed
             //Update Scores
             //Turn Score
             int val = Control.CurrentPlayer.TurnScore + Control.GetDicePoints(list);
+            if (_finalRound)
+            {
+                if (val > _winThreshold)
+                {
+                    TxtThreshold.ForeColor = Color.Black;
+                    TxtThreshold.Text = "You are in the lead!";
+                }
+            }else
+            {
+                if(Control.CurrentPlayer.BankedScore < START_THRESHOLD && val >= START_THRESHOLD)
+                {
+                    TxtThreshold.Text = "Bank now to get in the game!";
+                }
+                if(val >= _winThreshold)
+                {
+                    TxtThreshold.Text = "Bank now to start the Final Round!";
+                }
+            }
             TxtTurnPoints.Text = val.ToString();
             //Banked Score
             TxtBankedPoints.Text = Control.CurrentPlayer.BankedScore.ToString();

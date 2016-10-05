@@ -70,9 +70,11 @@ namespace Greed
             if(TxtNameJoin.Text == "")
             {
                 BtnJoin.Enabled = false;
+                BtnStart.Enabled = true;
             }else
             {
                 BtnJoin.Enabled = true;
+                BtnStart.Enabled = false;
             }
         }
         
