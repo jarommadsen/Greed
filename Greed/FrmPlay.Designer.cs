@@ -49,7 +49,7 @@
             this.BtnDie14 = new System.Windows.Forms.Button();
             this.BtnDie8 = new System.Windows.Forms.Button();
             this.BtnDie12 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.TxtThreshold = new System.Windows.Forms.Label();
             this.TxtCurrentPlayer = new System.Windows.Forms.Label();
             this.TLPnlDiceInHand.SuspendLayout();
             this.TLPnlDiceAside.SuspendLayout();
@@ -309,26 +309,27 @@
             this.BtnDie12.UseVisualStyleBackColor = true;
             this.BtnDie12.Click += new System.EventHandler(this.AsideBtnDie_Click);
             // 
-            // label2
+            // TxtThreshold
             // 
-            this.label2.AutoSize = true;
-            this.label2.Enabled = false;
-            this.label2.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(212, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 15);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "LAST TURN!!";
+            this.TxtThreshold.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtThreshold.ForeColor = System.Drawing.Color.Red;
+            this.TxtThreshold.Location = new System.Drawing.Point(88, 73);
+            this.TxtThreshold.Name = "TxtThreshold";
+            this.TxtThreshold.Size = new System.Drawing.Size(339, 15);
+            this.TxtThreshold.TabIndex = 5;
+            this.TxtThreshold.Text = "LAST TURN!!";
+            this.TxtThreshold.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TxtCurrentPlayer
             // 
-            this.TxtCurrentPlayer.AutoSize = true;
-            this.TxtCurrentPlayer.Location = new System.Drawing.Point(246, 29);
+            this.TxtCurrentPlayer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TxtCurrentPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCurrentPlayer.Location = new System.Drawing.Point(0, 0);
             this.TxtCurrentPlayer.Name = "TxtCurrentPlayer";
-            this.TxtCurrentPlayer.Size = new System.Drawing.Size(73, 13);
+            this.TxtCurrentPlayer.Size = new System.Drawing.Size(525, 31);
             this.TxtCurrentPlayer.TabIndex = 6;
             this.TxtCurrentPlayer.Text = "Current Player";
+            this.TxtCurrentPlayer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmPlay
             // 
@@ -336,7 +337,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 340);
             this.Controls.Add(this.TxtCurrentPlayer);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.TxtThreshold);
             this.Controls.Add(this.TLPnlDiceAside);
             this.Controls.Add(this.BtnRoll);
             this.Controls.Add(this.BtnBank);
@@ -377,7 +378,7 @@
         private System.Windows.Forms.Button BtnDie13;
         private System.Windows.Forms.Button BtnDie14;
         private System.Windows.Forms.Button BtnDie8;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label TxtThreshold;
         private System.Windows.Forms.Label TxtCurrentPlayer;
     }
 }

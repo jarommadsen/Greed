@@ -13,16 +13,24 @@ namespace Greed
     public partial class FrmPlay : Form
     {
         private const string EMPTY_SLOT_TXT = "X";
+        private const int START_THRESHOLD = 1000;
 
         Button[] _handBtns;
         Button[] _asideBtns;
         Button[] _allBtns;
         IDice[] _allBtnDice;
         List<IDice> _modifiedDice;
+        int _winThreshold;
+        bool _finalRound;
+        Player _winner;
+        bool _bust;
 
         public FrmPlay()
         {
             InitializeComponent();
+            _finalRound = false;
+            _winner = null;
+            _winThreshold = 10000;
             _handBtns = new Button[7] { BtnDie1, BtnDie2, BtnDie3, BtnDie4, BtnDie5, BtnDie6, BtnDie7 };
             _asideBtns = new Button[7] { BtnDie8, BtnDie9, BtnDie10, BtnDie11, BtnDie12, BtnDie13, BtnDie14 };
             _allBtns = new Button[14];
@@ -166,6 +174,7 @@ namespace Greed
 
         private void NextPlayer()
         {
+            _bust = false;
             Control.NextPlayer();
             UpdateView();
             foreach(Button element in _handBtns)
@@ -173,7 +182,20 @@ namespace Greed
                 element.Enabled = false;
             }
             BtnRoll.Enabled = true;
+
+            //Update text
             TxtCurrentPlayer.Text = Control.CurrentPlayer.Name;
+            TxtThreshold.ForeColor = Color.Black;
+            TxtThreshold.Text = "Score " + _winThreshold + " points to start Final Round";
+            if (Control.CurrentPlayer.BankedScore < START_THRESHOLD)
+            {
+                TxtThreshold.Text = "Score at least " + START_THRESHOLD + " points to get in the game";
+            }
+            if (_finalRound)
+            {
+                TxtThreshold.ForeColor = Color.Red;
+                TxtThreshold.Text = "LAST ROUND! Score to beat: " + _winThreshold;
+            }
         }
 
         /// <summary>
@@ -210,6 +232,7 @@ namespace Greed
             if(_modifiedDice.Count == 0)
             {
                 Control.CurrentPlayer.TurnScore = 0;
+                _bust = true;
             }
             BtnRoll.Enabled = false;
             UpdateView();
@@ -222,14 +245,31 @@ namespace Greed
         /// <param name="e"></param>
         private void BtnBank_Click(object sender, EventArgs e)
         {
-            Control.CurrentPlayer.TurnScore += Control.GetDicePoints(Control.DiceSetAside);
+            List<IDice> list = ModifiedSetAside();
+            Control.CurrentPlayer.TurnScore += Control.GetDicePoints(list);
 
-            if (Control.CurrentPlayer.BankedScore + Control.CurrentPlayer.TurnScore >= 1000)
+            //Only bank points if beginning threshold has been reached
+            if (Control.CurrentPlayer.BankedScore + Control.CurrentPlayer.TurnScore >= START_THRESHOLD)
             {
                 Control.CurrentPlayer.BankedScore += Control.CurrentPlayer.TurnScore;
+                System.Diagnostics.Debug.WriteLine(Control.CurrentPlayer.Name + " banked: "+Control.CurrentPlayer.TurnScore);
+                System.Diagnostics.Debug.WriteLine(Control.CurrentPlayer.Name + ": " + Control.CurrentPlayer.BankedScore);
+            }
+            //Trigger final round if score crosses win threshold
+            if(Control.CurrentPlayer.BankedScore >= _winThreshold)
+            {
+                _finalRound = true;
+                _winner = Control.CurrentPlayer;
+                _winThreshold = Control.CurrentPlayer.BankedScore;
             }
             Control.CurrentPlayer.TurnScore = 0;
             NextPlayer();
+            if(_finalRound && Control.CurrentPlayer == _winner)
+            {
+                Hide();
+                FrmGameOver frm = new FrmGameOver();
+                frm.Show();
+            }
         }
     }
 }
