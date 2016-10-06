@@ -12,8 +12,8 @@ namespace Greed
 {
     public partial class FrmPlay : Form
     {
-        private const string EMPTY_SLOT_TXT = "X";
-        private const int START_THRESHOLD = 100;
+        private const string EMPTY_SLOT_TXT = "";
+        private const int START_THRESHOLD = 1000;
 
         Button[] _handBtns;
         Button[] _asideBtns;
@@ -30,7 +30,7 @@ namespace Greed
             InitializeComponent();
             _finalRound = false;
             _winner = null;
-            _winThreshold = 1000;
+            _winThreshold = 10000;
             _handBtns = new Button[7] { BtnDie1, BtnDie2, BtnDie3, BtnDie4, BtnDie5, BtnDie6, BtnDie7 };
             _asideBtns = new Button[7] { BtnDie8, BtnDie9, BtnDie10, BtnDie11, BtnDie12, BtnDie13, BtnDie14 };
             _allBtns = new Button[14];

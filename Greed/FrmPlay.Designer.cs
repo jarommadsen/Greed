@@ -162,6 +162,7 @@
             this.TxtTurnPoints.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.TxtTurnPoints.Location = new System.Drawing.Point(295, 164);
             this.TxtTurnPoints.Name = "TxtTurnPoints";
+            this.TxtTurnPoints.ReadOnly = true;
             this.TxtTurnPoints.Size = new System.Drawing.Size(89, 38);
             this.TxtTurnPoints.TabIndex = 1;
             this.TxtTurnPoints.Text = "XXXXX";
@@ -173,6 +174,7 @@
             this.TxtBankedPoints.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.TxtBankedPoints.Location = new System.Drawing.Point(417, 164);
             this.TxtBankedPoints.Name = "TxtBankedPoints";
+            this.TxtBankedPoints.ReadOnly = true;
             this.TxtBankedPoints.Size = new System.Drawing.Size(89, 38);
             this.TxtBankedPoints.TabIndex = 1;
             this.TxtBankedPoints.Text = "XXXXX";
