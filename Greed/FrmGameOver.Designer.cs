@@ -31,6 +31,7 @@
             this.LblPlayAgain = new System.Windows.Forms.Label();
             this.BtnPlayAgainYes = new System.Windows.Forms.Button();
             this.BtnPlayAgainNo = new System.Windows.Forms.Button();
+            this.TxtWinner = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LblPlayAgain
@@ -50,6 +51,7 @@
             this.BtnPlayAgainYes.TabIndex = 1;
             this.BtnPlayAgainYes.Text = "Yes";
             this.BtnPlayAgainYes.UseVisualStyleBackColor = true;
+            this.BtnPlayAgainYes.Click += new System.EventHandler(this.BtnPlayAgainYes_Click);
             // 
             // BtnPlayAgainNo
             // 
@@ -59,17 +61,30 @@
             this.BtnPlayAgainNo.TabIndex = 1;
             this.BtnPlayAgainNo.Text = "No";
             this.BtnPlayAgainNo.UseVisualStyleBackColor = true;
+            this.BtnPlayAgainNo.Click += new System.EventHandler(this.BtnPlayAgainNo_Click);
+            // 
+            // TxtWinner
+            // 
+            this.TxtWinner.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TxtWinner.Location = new System.Drawing.Point(0, 0);
+            this.TxtWinner.Name = "TxtWinner";
+            this.TxtWinner.Size = new System.Drawing.Size(284, 79);
+            this.TxtWinner.TabIndex = 2;
+            this.TxtWinner.Text = "Winner!";
+            this.TxtWinner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmGameOver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.TxtWinner);
             this.Controls.Add(this.BtnPlayAgainNo);
             this.Controls.Add(this.BtnPlayAgainYes);
             this.Controls.Add(this.LblPlayAgain);
             this.Name = "FrmGameOver";
             this.Text = "FrmGameOver";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmGameOver_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,5 +95,6 @@
         private System.Windows.Forms.Label LblPlayAgain;
         private System.Windows.Forms.Button BtnPlayAgainYes;
         private System.Windows.Forms.Button BtnPlayAgainNo;
+        private System.Windows.Forms.Label TxtWinner;
     }
 }

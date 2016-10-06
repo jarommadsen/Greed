@@ -12,9 +12,25 @@ namespace Greed
 {
     public partial class FrmGameOver : Form
     {
-        public FrmGameOver()
+        public FrmGameOver(Player winner)
         {
             InitializeComponent();
+            TxtWinner.Text = winner.Name + " wins!\nThanks for playing!";
+        }
+
+        private void FrmGameOver_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnPlayAgainNo_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnPlayAgainYes_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }
