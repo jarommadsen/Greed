@@ -127,6 +127,7 @@
             this.Controls.Add(this.TxtNameJoin);
             this.Controls.Add(this.LblJoinInstructions);
             this.Controls.Add(this.LblWelcome);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmJoin";
             this.Text = "Greed";
             this.ResumeLayout(false);

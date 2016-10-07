@@ -82,6 +82,7 @@
             this.Controls.Add(this.BtnPlayAgainNo);
             this.Controls.Add(this.BtnPlayAgainYes);
             this.Controls.Add(this.LblPlayAgain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmGameOver";
             this.Text = "FrmGameOver";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmGameOver_FormClosed);

@@ -51,6 +51,9 @@
             this.BtnDie12 = new System.Windows.Forms.Button();
             this.TxtThreshold = new System.Windows.Forms.Label();
             this.TxtCurrentPlayer = new System.Windows.Forms.Label();
+            this.ScoreListView = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TLPnlDiceInHand.SuspendLayout();
             this.TLPnlDiceAside.SuspendLayout();
             this.SuspendLayout();
@@ -165,6 +168,7 @@
             this.TxtTurnPoints.ReadOnly = true;
             this.TxtTurnPoints.Size = new System.Drawing.Size(89, 38);
             this.TxtTurnPoints.TabIndex = 1;
+            this.TxtTurnPoints.TabStop = false;
             this.TxtTurnPoints.Text = "XXXXX";
             this.TxtTurnPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -177,6 +181,7 @@
             this.TxtBankedPoints.ReadOnly = true;
             this.TxtBankedPoints.Size = new System.Drawing.Size(89, 38);
             this.TxtBankedPoints.TabIndex = 1;
+            this.TxtBankedPoints.TabStop = false;
             this.TxtBankedPoints.Text = "XXXXX";
             // 
             // label1
@@ -328,16 +333,28 @@
             this.TxtCurrentPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCurrentPlayer.Location = new System.Drawing.Point(0, 0);
             this.TxtCurrentPlayer.Name = "TxtCurrentPlayer";
-            this.TxtCurrentPlayer.Size = new System.Drawing.Size(525, 31);
+            this.TxtCurrentPlayer.Size = new System.Drawing.Size(795, 31);
             this.TxtCurrentPlayer.TabIndex = 6;
             this.TxtCurrentPlayer.Text = "Current Player";
             this.TxtCurrentPlayer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ScoreListView
+            // 
+            this.ScoreListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.ScoreListView.Location = new System.Drawing.Point(512, 35);
+            this.ScoreListView.Name = "ScoreListView";
+            this.ScoreListView.Size = new System.Drawing.Size(271, 289);
+            this.ScoreListView.TabIndex = 7;
+            this.ScoreListView.UseCompatibleStateImageBehavior = false;
             // 
             // FrmPlay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(525, 340);
+            this.ClientSize = new System.Drawing.Size(795, 340);
+            this.Controls.Add(this.ScoreListView);
             this.Controls.Add(this.TxtCurrentPlayer);
             this.Controls.Add(this.TxtThreshold);
             this.Controls.Add(this.TLPnlDiceAside);
@@ -347,6 +364,7 @@
             this.Controls.Add(this.TxtBankedPoints);
             this.Controls.Add(this.TxtTurnPoints);
             this.Controls.Add(this.TLPnlDiceInHand);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmPlay";
             this.Text = "Greed";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmPlay_FormClosed);
@@ -382,5 +400,8 @@
         private System.Windows.Forms.Button BtnDie8;
         private System.Windows.Forms.Label TxtThreshold;
         private System.Windows.Forms.Label TxtCurrentPlayer;
+        private System.Windows.Forms.ListView ScoreListView;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }
