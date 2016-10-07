@@ -44,11 +44,6 @@ namespace Greed
             // add player to list and clear the textbox
             LBxJoinedPlayerNames.Items.Add(newPlayer);
 
-            //Enable Start button if more than 2 players have been added
-            if(LBxJoinedPlayerNames.Items.Count >= 2)
-            {
-                BtnStart.Enabled = true;
-            }
             TxtNameJoin.Text = string.Empty;
         }
         /// <summary>
@@ -62,6 +57,7 @@ namespace Greed
         }
         /// <summary>
         /// Disable Join button if no text has been entered and enable if there is text
+        /// Enable Start button if no text has been entered (and 2 players have joined) disable visa versa
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -70,8 +66,13 @@ namespace Greed
             if(TxtNameJoin.Text == "")
             {
                 BtnJoin.Enabled = false;
-                BtnStart.Enabled = true;
-            }else
+                //Enable Start button if more than 2 players have been added
+                if (LBxJoinedPlayerNames.Items.Count >= 2)
+                {
+                    BtnStart.Enabled = true;
+                }
+            }
+            else
             {
                 BtnJoin.Enabled = true;
                 BtnStart.Enabled = false;
