@@ -111,8 +111,9 @@ namespace Greed
                 {
                     BtnRoll.Enabled = true;
                 }
-                int score = Control.CurrentPlayer.TurnScore + Control.CurrentPlayer.BankedScore + Control.GetDicePoints(list);
-                if ((!_finalRound && score >= START_THRESHOLD) || (_finalRound && score > _winThreshold) || _bust)
+                int roundScore = Control.CurrentPlayer.TurnScore + Control.GetDicePoints(list);
+                int score = Control.CurrentPlayer.BankedScore + roundScore;
+                if ((roundScore > 0 && (!_finalRound && score >= START_THRESHOLD) || (_finalRound && score > _winThreshold)) || _bust)
                 {
                     BtnBank.Enabled = true;
                     if (_bust)
