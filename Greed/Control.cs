@@ -120,6 +120,12 @@ namespace Greed
         {
             if (_playerList.Contains(player))
             {
+                if(player == _currentPlayer)
+                {
+                    int i = Players.IndexOf(_currentPlayer) - 1;
+                    if (i < 0) i = Players.Count() - 1;
+                    _currentPlayer = Players[i];
+                }
                 _playerList.Remove(player);
             }else
             {

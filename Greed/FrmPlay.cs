@@ -326,7 +326,7 @@ namespace Greed
             NextPlayer();
 
             //Winner?
-            if(_finalRound && Control.CurrentPlayer == _winner)
+            if (_finalRound && Control.CurrentPlayer == _winner)
             {
                 Hide();
                 FrmGameOver frm = new FrmGameOver(_winner);
