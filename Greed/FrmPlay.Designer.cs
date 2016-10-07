@@ -51,9 +51,7 @@
             this.BtnDie12 = new System.Windows.Forms.Button();
             this.TxtThreshold = new System.Windows.Forms.Label();
             this.TxtCurrentPlayer = new System.Windows.Forms.Label();
-            this.ScoreListView = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LB_Scores = new System.Windows.Forms.ListBox();
             this.TLPnlDiceInHand.SuspendLayout();
             this.TLPnlDiceAside.SuspendLayout();
             this.SuspendLayout();
@@ -338,23 +336,23 @@
             this.TxtCurrentPlayer.Text = "Current Player";
             this.TxtCurrentPlayer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ScoreListView
+            // LB_Scores
             // 
-            this.ScoreListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.ScoreListView.Location = new System.Drawing.Point(512, 35);
-            this.ScoreListView.Name = "ScoreListView";
-            this.ScoreListView.Size = new System.Drawing.Size(271, 289);
-            this.ScoreListView.TabIndex = 7;
-            this.ScoreListView.UseCompatibleStateImageBehavior = false;
+            this.LB_Scores.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Scores.FormattingEnabled = true;
+            this.LB_Scores.ItemHeight = 24;
+            this.LB_Scores.Location = new System.Drawing.Point(512, 35);
+            this.LB_Scores.Name = "LB_Scores";
+            this.LB_Scores.Size = new System.Drawing.Size(271, 292);
+            this.LB_Scores.TabIndex = 7;
+            this.LB_Scores.SelectedIndexChanged += new System.EventHandler(this.LB_Scores_SelectedIndexChanged);
             // 
             // FrmPlay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(795, 340);
-            this.Controls.Add(this.ScoreListView);
+            this.Controls.Add(this.LB_Scores);
             this.Controls.Add(this.TxtCurrentPlayer);
             this.Controls.Add(this.TxtThreshold);
             this.Controls.Add(this.TLPnlDiceAside);
@@ -400,8 +398,6 @@
         private System.Windows.Forms.Button BtnDie8;
         private System.Windows.Forms.Label TxtThreshold;
         private System.Windows.Forms.Label TxtCurrentPlayer;
-        private System.Windows.Forms.ListView ScoreListView;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ListBox LB_Scores;
     }
 }

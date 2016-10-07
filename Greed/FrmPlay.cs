@@ -24,6 +24,7 @@ namespace Greed
         bool _finalRound;
         Player _winner;
         bool _bust;
+        int LB_Scores_PrevSel;
 
         public FrmPlay()
         {
@@ -236,6 +237,19 @@ namespace Greed
                     TxtThreshold.Text = "Score " + _winThreshold + " points to start Final Round";
                 }
             }
+            //Update Scorebox
+            LB_Scores.Items.Clear();
+            int i = 0;
+            foreach(Player element in Control.Players)
+            {
+                LB_Scores.Items.Add(element.Name + ": " + element.BankedScore);
+                if(element == Control.CurrentPlayer)
+                {
+                    LB_Scores_PrevSel = i;
+                    LB_Scores.SelectedIndex = i;
+                }
+                i++;
+            }
         }
 
         /// <summary>
@@ -316,6 +330,11 @@ namespace Greed
                 FrmGameOver frm = new FrmGameOver(_winner);
                 frm.Show();
             }
+        }
+
+        private void LB_Scores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LB_Scores.SelectedIndex = LB_Scores_PrevSel;
         }
     }
 }
