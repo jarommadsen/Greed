@@ -14,6 +14,8 @@ namespace Greed
     {
         private const string EMPTY_SLOT_TXT = "";
         private const int START_THRESHOLD = 1000;
+        private const int END_THRESHOLD = 10000;
+        private const string FRMT_SCORE = "{0:n0}";
 
         Button[] _handBtns;
         Button[] _asideBtns;
@@ -31,7 +33,7 @@ namespace Greed
             InitializeComponent();
             _finalRound = false;
             _winner = null;
-            _winThreshold = 10000;
+            _winThreshold = END_THRESHOLD;
             _handBtns = new Button[7] { BtnDie1, BtnDie2, BtnDie3, BtnDie4, BtnDie5, BtnDie6, BtnDie7 };
             _asideBtns = new Button[7] { BtnDie8, BtnDie9, BtnDie10, BtnDie11, BtnDie12, BtnDie13, BtnDie14 };
             _allBtns = new Button[14];
@@ -229,12 +231,12 @@ namespace Greed
                 if (Control.CurrentPlayer.BankedScore < START_THRESHOLD)
                 {
                     TxtThreshold.ForeColor = Color.Blue;
-                    TxtThreshold.Text = "Score at least " + START_THRESHOLD + " points to get in the game";
+                    TxtThreshold.Text = "Score at least " + string.Format(FRMT_SCORE,START_THRESHOLD) + " points to get in the game";
                 }
                 else
                 {
                     TxtThreshold.ForeColor = Color.Black;
-                    TxtThreshold.Text = "Score " + _winThreshold + " points to start Final Round";
+                    TxtThreshold.Text = "Score " + string.Format(FRMT_SCORE, _winThreshold) + " points to start Final Round";
                 }
             }
             //Update Scorebox
@@ -242,7 +244,7 @@ namespace Greed
             int i = 0;
             foreach(Player element in Control.Players)
             {
-                LB_Scores.Items.Add(element.Name + ": " + element.BankedScore);
+                LB_Scores.Items.Add(element.Name + ": " + string.Format(FRMT_SCORE, element.BankedScore));
                 if(element == Control.CurrentPlayer)
                 {
                     LB_Scores_PrevSel = i;
